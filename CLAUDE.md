@@ -10,6 +10,7 @@
 - [ ] Verify `.gitignore` includes `.env*` and `!.env.example`
 - [ ] Copy `docs/templates/logger-template.ts` to `src/lib/logger.ts`
 - [ ] Create ARCHITECTURE.md from template at project root
+- [ ] Run `/project-setup` to scaffold additional artifacts (skills, evals, brand docs)
 <!-- DELETE this checklist once all items are done — a clean CLAUDE.md = a configured project -->
 
 ## Project Identity
@@ -173,8 +174,16 @@ grep -rn "$SECRET_SCAN_PATTERNS" --include="*.ts" --include="*.tsx" --include="*
 ## Reference Docs
 - `ARCHITECTURE.md` — Living system design
 - `docs/github-workflow-guide.md` — Step-by-step feature development workflow
+- `docs/project-setup-guide.md` — Decision guide for artifact selection (skills, evals, brand docs)
+- `docs/skills-guide.md` — How to create custom Claude Code skills
+- `docs/evals-guide.md` — How to set up AI output quality testing
+- `docs/brand-voice-guide.md` — How to define writing style and brand voice
 - `docs/requirements/` — Feature specs
 - `docs/decisions/` — Architecture Decision Records
 - `docs/templates/FEATURE-CLAUDE.md` — Feature boundary template
 - `docs/templates/logger-template.ts` — Structured logger implementation
+- `docs/templates/skill-template.md` — Custom skill starter file
+- `docs/templates/eval-template/` — Eval test structure starter (rubric + test cases)
+- `docs/templates/brand/` — Brand identity, style guide, and tone matrix templates
 - `docs/parallel-development.md` — Multi-developer worktree workflow
+- `.claude/commands/project-setup.md` — Interactive project setup skill (`/project-setup`)

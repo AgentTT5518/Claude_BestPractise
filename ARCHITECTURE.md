@@ -1,6 +1,6 @@
 # Architecture — [Project Name]
 
-> Last updated: [YYYY-MM-DD] | Updated by: Claude Code
+> Last updated: 2026-03-12 | Updated by: Claude Code
 
 ## System Overview
 [2-3 sentences: what this system does, who uses it, core value.]
@@ -95,6 +95,7 @@ Service Error -> try-catch -> Logger -> Retry (if applicable) -> Propagate
 | Feature | Date | Key Decisions | Files Changed |
 |---------|------|---------------|---------------|
 | _Scaffolding_ | _YYYY-MM-DD_ | _Initial setup decisions_ | _Initial files_ |
+| Project Setup Decision System | 2026-03-12 | Decision guide as source of truth; skill automates it; no MCP templates (too project-specific); manual-first evals; layered brand docs | `docs/project-setup-guide.md`, `docs/skills-guide.md`, `docs/evals-guide.md`, `docs/brand-voice-guide.md`, `docs/templates/skill-template.md`, `docs/templates/eval-template/*`, `docs/templates/brand/*`, `.claude/commands/project-setup.md` |
 
 > Add a row after completing each feature. Link to `docs/decisions/` for details.
 

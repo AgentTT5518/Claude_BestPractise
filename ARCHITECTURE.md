@@ -96,6 +96,7 @@ Service Error -> try-catch -> Logger -> Retry (if applicable) -> Propagate
 |---------|------|---------------|---------------|
 | _Scaffolding_ | _YYYY-MM-DD_ | _Initial setup decisions_ | _Initial files_ |
 | Project Setup Decision System | 2026-03-12 | Decision guide as source of truth; skill automates it; no MCP templates (too project-specific); manual-first evals; layered brand docs | `docs/project-setup-guide.md`, `docs/skills-guide.md`, `docs/evals-guide.md`, `docs/brand-voice-guide.md`, `docs/templates/skill-template.md`, `docs/templates/eval-template/*`, `docs/templates/brand/*`, `.claude/commands/project-setup.md` |
+| Command Policy | 2026-03-12 | Three-tier permission model (auto-approve / confirm / prohibit); allowlist-only approach; orthogonal to Rule 5 (file scope vs operation scope); includes concrete PreToolUse hook example | `docs/command-policy.md`, `CLAUDE.md`, `README.md` |
 
 > Add a row after completing each feature. Link to `docs/decisions/` for details.
 

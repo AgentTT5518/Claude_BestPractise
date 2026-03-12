@@ -14,6 +14,7 @@ A reusable template for managing projects with Claude Code. Provides structure, 
 | `docs/skills-guide.md` | Guide to creating custom Claude Code slash commands |
 | `docs/evals-guide.md` | Guide to AI output quality testing |
 | `docs/brand-voice-guide.md` | Guide to defining brand voice for AI outputs |
+| `docs/command-policy.md` | Three-tier command permission policy for Claude Code operations |
 | `docs/templates/FEATURE-CLAUDE.md` | Per-feature boundary template — prevents cross-feature edits |
 | `docs/templates/logger-template.ts` | Structured logger factory — creates feature-scoped loggers |
 | `docs/templates/skill-template.md` | Starter file for custom skills |

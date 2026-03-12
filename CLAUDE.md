@@ -178,6 +178,7 @@ grep -rn "$SECRET_SCAN_PATTERNS" --include="*.ts" --include="*.tsx" --include="*
 - `docs/skills-guide.md` — How to create custom Claude Code skills
 - `docs/evals-guide.md` — How to set up AI output quality testing
 - `docs/brand-voice-guide.md` — How to define writing style and brand voice
+- `docs/command-policy.md` — Command permission tiers for Claude Code operations
 - `docs/requirements/` — Feature specs
 - `docs/decisions/` — Architecture Decision Records
 - `docs/templates/FEATURE-CLAUDE.md` — Feature boundary template

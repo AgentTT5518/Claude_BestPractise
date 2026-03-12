@@ -10,8 +10,16 @@ A reusable template for managing projects with Claude Code. Provides structure, 
 | `ARCHITECTURE.md` | Living architecture document template — updated after every feature |
 | `docs/github-workflow-guide.md` | 12-step feature development workflow using git worktrees |
 | `docs/parallel-development.md` | Rules for multiple developers working on the same repo |
+| `docs/project-setup-guide.md` | Decision tree for choosing which artifacts to create |
+| `docs/skills-guide.md` | Guide to creating custom Claude Code slash commands |
+| `docs/evals-guide.md` | Guide to AI output quality testing |
+| `docs/brand-voice-guide.md` | Guide to defining brand voice for AI outputs |
 | `docs/templates/FEATURE-CLAUDE.md` | Per-feature boundary template — prevents cross-feature edits |
 | `docs/templates/logger-template.ts` | Structured logger factory — creates feature-scoped loggers |
+| `docs/templates/skill-template.md` | Starter file for custom skills |
+| `docs/templates/eval-template/` | Starter structure for evals (rubric + test cases) |
+| `docs/templates/brand/` | Brand identity, style guide, and tone matrix templates |
+| `.claude/commands/project-setup.md` | Interactive setup skill — run with `/project-setup` |
 
 ## Quick Start
 
@@ -19,7 +27,8 @@ A reusable template for managing projects with Claude Code. Provides structure, 
 2. Open `CLAUDE.md` and complete the **Setup Checklist** at the top
 3. Create `ARCHITECTURE.md` from the template
 4. Copy `docs/templates/logger-template.ts` to `src/lib/logger.ts`
-5. Start building — follow the Feature Workflow in `CLAUDE.md`
+5. Run `/project-setup` to scaffold additional artifacts (skills, evals, brand docs)
+6. Start building — follow the Feature Workflow in `CLAUDE.md`
 
 ## What the 5 Mandatory Rules Enforce
 

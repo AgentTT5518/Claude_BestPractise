@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'   # replace with pnpm or bun if needed
+
+      - name: Install dependencies
+        run: npm install   # replace [pm] with your package manager
+
+      - name: Type check
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm run test
+
+      - name: Secret scan
+        run: |
+          if grep -rn "sk-\|AKIA\|ghp_\|Bearer \|password\s*=" \
+            --include="*.ts" --include="*.tsx" --include="*.js" \
+            --include="*.json" --include="*.env" \
+            src/ tests/ . 2>/dev/null \
+            | grep -v node_modules | grep -v ".env.example"; then
+            echo "SECRETS DETECTED — merge blocked"
+            exit 1
+          else
+            echo "Secret scan passed"
+          fi

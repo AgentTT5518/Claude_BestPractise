@@ -88,7 +88,11 @@ Service Error -> try-catch -> Logger -> Retry (if applicable) -> Propagate
 <!-- Describe: zod, sanitization, parameterized queries, etc. -->
 
 ### Deployment Security
-<!-- Env vars in hosting platform, HTTPS, build log verification -->
+- CI runs on every PR: `typecheck` + `lint` + `test` + secret scan — blocks merge on failure
+- CD runs on merge to `main`: build + deploy
+- Branch protection on `main`: merges require CI to pass (GitHub → Settings → Branches)
+- Deploy secrets stored in GitHub Settings → Secrets and variables → Actions — never in code
+- All env vars set in hosting platform — never in build output or logs
 
 ## Feature Log
 
@@ -97,6 +101,7 @@ Service Error -> try-catch -> Logger -> Retry (if applicable) -> Propagate
 | _Scaffolding_ | _YYYY-MM-DD_ | _Initial setup decisions_ | _Initial files_ |
 | Project Setup Decision System | 2026-03-12 | Decision guide as source of truth; skill automates it; no MCP templates (too project-specific); manual-first evals; layered brand docs | `docs/project-setup-guide.md`, `docs/skills-guide.md`, `docs/evals-guide.md`, `docs/brand-voice-guide.md`, `docs/templates/skill-template.md`, `docs/templates/eval-template/*`, `docs/templates/brand/*`, `.claude/commands/project-setup.md` |
 | Command Policy | 2026-03-12 | Three-tier permission model (auto-approve / confirm / prohibit); allowlist-only approach; orthogonal to Rule 5 (file scope vs operation scope); includes concrete PreToolUse hook example | `docs/command-policy.md`, `CLAUDE.md`, `README.md` |
+| CI/CD | 2026-03-13 | CI on every PR (typecheck, lint, test, secret scan); CD on merge to main (build + deploy); branch protection enforces CI gate; deploy secrets in GitHub — not in code; Vercel as reference deploy target | `.github/workflows/ci.yml`, `.github/workflows/cd.yml`, `CLAUDE.md`, `ARCHITECTURE.md`, `docs/github-workflow-guide.md` |
 
 > Add a row after completing each feature. Link to `docs/decisions/` for details.
 

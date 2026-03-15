@@ -28,7 +28,7 @@ A reusable template for managing projects with Claude Code. Provides structure, 
 
 1. Copy all files into your new project root
 2. Open `CLAUDE.md` and complete the **Setup Checklist** at the top
-3. Create `ARCHITECTURE.md` from the template
+3. Fill in the `ARCHITECTURE.md` template (already present at project root)
 4. Copy `docs/templates/logger-template.ts` to `src/lib/logger.ts`
 5. Run `/project-setup` to scaffold additional artifacts (skills, evals, brand docs)
 6. Replace `[pm]` in `.github/workflows/ci.yml` and `cd.yml` with your package manager

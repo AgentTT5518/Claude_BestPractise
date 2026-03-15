@@ -51,8 +51,11 @@ jobs:
           if grep -rn "sk-\|AKIA\|ghp_\|Bearer \|password\s*=" \
             --include="*.ts" --include="*.tsx" --include="*.js" \
             --include="*.json" --include="*.env" \
-            src/ tests/ . 2>/dev/null \
-            | grep -v node_modules | grep -v ".env.example"; then
+            --include="*.yaml" --include="*.yml" \
+            . 2>/dev/null \
+            | grep -v node_modules \
+            | grep -v ".env.example" \
+            | grep -v ".git/"; then
             echo "SECRETS DETECTED — merge blocked"
             exit 1
           else

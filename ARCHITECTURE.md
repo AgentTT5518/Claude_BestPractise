@@ -1,6 +1,6 @@
 # Architecture — [Project Name]
 
-> Last updated: 2026-03-12 | Updated by: Claude Code
+> Last updated: 2026-03-15 | Updated by: Claude Code
 
 ## System Overview
 [2-3 sentences: what this system does, who uses it, core value.]
@@ -102,6 +102,7 @@ Service Error -> try-catch -> Logger -> Retry (if applicable) -> Propagate
 | Project Setup Decision System | 2026-03-12 | Decision guide as source of truth; skill automates it; no MCP templates (too project-specific); manual-first evals; layered brand docs | `docs/project-setup-guide.md`, `docs/skills-guide.md`, `docs/evals-guide.md`, `docs/brand-voice-guide.md`, `docs/templates/skill-template.md`, `docs/templates/eval-template/*`, `docs/templates/brand/*`, `.claude/commands/project-setup.md` |
 | Command Policy | 2026-03-12 | Three-tier permission model (auto-approve / confirm / prohibit); allowlist-only approach; orthogonal to Rule 5 (file scope vs operation scope); includes concrete PreToolUse hook example | `docs/command-policy.md`, `CLAUDE.md`, `README.md` |
 | CI/CD | 2026-03-13 | CI on every PR (typecheck, lint, test, secret scan); CD on merge to main (build + deploy); branch protection enforces CI gate; deploy secrets in GitHub — not in code; Vercel as reference deploy target | `.github/workflows/ci.yml`, `.github/workflows/cd.yml`, `CLAUDE.md`, `ARCHITECTURE.md`, `docs/github-workflow-guide.md` |
+| Audit Report Fixes | 2026-03-15 | Fixed CI secret scan scope (all of `.`, yaml/yml, exclude .git/); added .env.example; created docs/decisions/; added template disclaimer to CLAUDE.md; fixed README Quick Start step 3; .gitignore and cd.yml already correct | `.gitignore`, `.github/workflows/ci.yml`, `.github/workflows/cd.yml`, `CLAUDE.md`, `README.md`, `ARCHITECTURE.md`, `.env.example`, `docs/decisions/.gitkeep` |
 
 > Add a row after completing each feature. Link to `docs/decisions/` for details.
 

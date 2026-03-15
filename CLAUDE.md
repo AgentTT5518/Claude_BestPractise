@@ -1,6 +1,7 @@
 # CLAUDE.md
 
 ## Setup Checklist
+<!-- NOTE: This is a template repo. All items below are intentionally unchecked and all [placeholder] values are intentionally unfilled. Complete these items when using this template for a real project. The [pm] tokens in Commands and Rules are also intentional placeholders — replace them with your actual package manager (npm/pnpm/bun). -->
 <!-- Complete ALL items before starting any feature work. Remove each [ ] as you go. -->
 - [ ] Fill in Project Identity table below
 - [ ] Replace `[pm]` with your package manager in Commands and Rules

@@ -54,6 +54,9 @@ src/
   lib/                    # Project-wide utilities (logger, db, config)
 tests/                    # Mirrors src/ structure
   test-results/           # Test run output logs (gitignored)
+Plan/                     # Feature planning lifecycle
+  Planning/               # Active plans (working drafts during planning)
+  Archive/                # Completed plans (moved here after development)
 docs/                     # requirements/, decisions/, templates/
 ```
 
@@ -166,12 +169,20 @@ grep -rn "$SECRET_SCAN_PATTERNS" --include="*.ts" --include="*.tsx" --include="*
 ```
 1. BOUNDARY  -> Copy docs/templates/FEATURE-CLAUDE.md to src/features/[name]/CLAUDE.md
               -> Replace [FEATURE_NAME] with actual name, fill in Owner + Description
-2. PLAN      -> /plan mode -> write docs/requirements/[feature].md
-3. DESIGN    -> Update ARCHITECTURE.md with planned changes
-4. BUILD     -> Implement + tests + logger (ask before cross-boundary edits)
-5. REVIEW    -> Secret scan + tests + self-review checklist
-6. DOCUMENT  -> Update ARCHITECTURE.md Feature Log
-7. COMMIT    -> Conventional commit -> push feature branch -> PR
+2. PLAN      -> Create Plan/Planning/[feature]/ folder
+              -> Copy docs/templates/plan-template.md to Plan/Planning/[feature]/plan.md
+              -> Iterate on plan with Claude — save progress to plan.md
+3. REVIEW    -> User reviews plan.md, adds comments/feedback
+              -> Resolve open questions, finalize approach
+4. APPROVE   -> User gives go-ahead to start development
+5. DESIGN    -> Update ARCHITECTURE.md with planned changes
+6. BUILD     -> Implement + tests + logger (ask before cross-boundary edits)
+7. TEST      -> Secret scan + tests + self-review checklist
+8. COMPLETE  -> Finalize docs/requirements/[feature].md (from plan)
+              -> Finalize docs/decisions/[feature].md (from plan decisions)
+              -> Update ARCHITECTURE.md Feature Log
+              -> Move Plan/Planning/[feature]/ to Plan/Archive/[feature]/
+9. COMMIT    -> Conventional commit -> push feature branch -> PR
 ```
 
 ## Reference Docs
@@ -182,8 +193,11 @@ grep -rn "$SECRET_SCAN_PATTERNS" --include="*.ts" --include="*.tsx" --include="*
 - `docs/evals-guide.md` — How to set up AI output quality testing
 - `docs/brand-voice-guide.md` — How to define writing style and brand voice
 - `docs/command-policy.md` — Command permission tiers for Claude Code operations
-- `docs/requirements/` — Feature specs
-- `docs/decisions/` — Architecture Decision Records
+- `Plan/Planning/` — Active feature plans (working drafts)
+- `Plan/Archive/` — Completed feature plans
+- `docs/templates/plan-template.md` — Plan file template
+- `docs/requirements/` — Finalized feature specs (written on completion)
+- `docs/decisions/` — Finalized Architecture Decision Records (written on completion)
 - `docs/templates/FEATURE-CLAUDE.md` — Feature boundary template
 - `docs/templates/logger-template.ts` — Structured logger implementation
 - `docs/templates/skill-template.md` — Custom skill starter file

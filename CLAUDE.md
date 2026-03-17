@@ -69,6 +69,7 @@ docs/                     # requirements/, decisions/, templates/
 - Every async op wrapped in try-catch with typed errors
 - Use project logger (`src/lib/logger.ts`), never bare `console.log`
 - File naming: kebab-case for files, PascalCase for components
+- Declare type dependencies explicitly — never rely on transitive `@types/*` packages (see `docs/dependency-hygiene.md`)
 <!-- Add project-specific conventions below (fonts, colors, patterns) -->
 
 ## Git Workflow
@@ -205,4 +206,5 @@ grep -rn "$SECRET_SCAN_PATTERNS" --include="*.ts" --include="*.tsx" --include="*
 - `docs/templates/eval-template/` — Eval test structure starter (rubric + test cases)
 - `docs/templates/brand/` — Brand identity, style guide, and tone matrix templates
 - `docs/parallel-development.md` — Multi-developer worktree workflow
+- `docs/dependency-hygiene.md` — Explicit type dependencies and lockfile parity
 - `.claude/commands/project-setup.md` — Interactive project setup skill (`/project-setup`)
